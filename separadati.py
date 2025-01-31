@@ -3,13 +3,13 @@ def separazione(ripetizioni) :
     floats = []
     interi = []
     
-    for x in range(ripetizioni) :
+    for _ in range(ripetizioni) :
         inserisci = input("Inserisci un numero o una stringa")
         
-        if inserisci.isdigit() or (inserisci.startswith('-') and inserisci[1:].isdigit()) :     #da riga 6 a riga 11 mi sono aiutato con chatgpt, sinceramente vorrei rivederla assieme questa parte
-            interi.append(int(inserisci))
-        elif inserisci.replace('.', '', 1).isdigit() and inserisci.count('.') == 1 :            #infatti credo sia qui l'errore, non riesco a far riconoscere i vari tipi
-            floats.append(inserisci)                                                            #e me li mette tutti coe fossero stringhe.. il resto credo di base sia giusto
+        if inserisci.isdigit() or (inserisci.startswith('-') and inserisci[1:].isdigit()) :     #da riga 6 a riga 11 mi sono aiutato con chatgpt, penso però di aver capito
+            interi.append(int(inserisci))                                                       # non sono però riuscito a far contare come float i numeri con la virgola
+        elif inserisci.replace('.', '', 1).isdigit() and inserisci.count('.') == 1 :            # che vengono considerati string (col punto invece sono float)
+            floats.append(inserisci)                                                            
         else :
             stringhe.append(inserisci)
     
